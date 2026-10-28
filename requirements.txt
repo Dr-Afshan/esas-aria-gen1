@@ -16,7 +16,7 @@ panns-inference>=0.1.0
 # Model comparison (notebook 06)
 transformers>=4.35.0
 
-# Aria Gen 2 VRS reading
+# Aria Gen 1 VRS reading
 projectaria-tools>=1.3.0
 
 # Live demo display

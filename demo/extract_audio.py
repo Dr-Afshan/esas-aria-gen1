@@ -1,7 +1,7 @@
 """
 Export audio from a VRS recording as a WAV file.
 
-Note: The Aria Gen 2 records 7-channel spatial audio optimised for
+Note: The Aria Gen 1 records 7-channel spatial audio optimised for
 direction-of-arrival estimation, not for casual listening. Standard
 media players will not play 7-channel WAV files correctly.
 

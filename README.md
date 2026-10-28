@@ -1,6 +1,14 @@
 # ESAS — Reproducibility Package
 
-Analysis code and results for **ESAS: A Deep Learning-Based Egocentric Environmental Sound Alerting System for Deaf and Hard-of-Hearing Users on Meta Project Aria Gen 2 Glasses**. Every table in the manuscript is reproducible from the notebooks below.
+Analysis code and results for **ESAS: A Deep Learning-Based Egocentric Environmental Sound Alerting System for Deaf and Hard-of-Hearing Users on Meta Project Aria Gen 1 Glasses**. Every table in the manuscript is reproducible from the notebooks below.
+
+## Repository layout
+
+- `01`–`09` notebooks — the reproducibility pipeline (see run order below)
+- `esas/` — library modules: PANNs detection, GCC-PHAT localization, and the combined alert pipeline
+- `demo/` — command-line tools: `aria_direction.py` (direction estimate from a VRS file) and `extract_audio.py`
+- `models/` — cached PANNs/AST/CLAP embeddings and the trained classifier
+- `results/` — per-trial results and summary statistics backing every table in the manuscript
 
 ## Requirements
 
@@ -16,7 +24,7 @@ pip install transformers torchaudio timm laion-clap   # only for notebook 06
 Set `BASE` at the top of each notebook to a folder containing:
 
 - `ESC-50/` — clone of https://github.com/karolpiczak/ESC-50 (detection training/evaluation)
-- `recordings/` — 129 Aria Gen 2 VRS recordings (120 experiment trials + 9 pilots) and their MPS output folders (`mps_*_vrs/`). Not publicly distributed due to hardware-specific acquisition workflows; available from the corresponding author for academic research purposes (see the paper's Data Availability statement).
+- `recordings/` — 129 Aria Gen 1 VRS recordings (120 experiment trials + 9 pilots) and their MPS output folders (`mps_*_vrs/`). Not publicly distributed due to hardware-specific acquisition workflows; available from the corresponding author for academic research purposes (see the paper's Data Availability statement).
 - `panns_data/` — PANNs CNN14 checkpoint (downloaded automatically by notebook 01)
 
 The four stimulus sounds played during the acoustic evaluation (fire alarm, telephone ring, crying baby, car horn) were publicly available recordings obtained from online sources.
@@ -55,7 +63,3 @@ The four stimulus sounds played during the acoustic evaluation (fire alarm, tele
 - Two sessions (`ophon90_2`, `studio_fire-90_2`) have no MPS trajectory output; their audio is analyzed normally for localization. MPS validation therefore covers 118 of 120 sessions, all of which met quality thresholds.
 - The 9 pilot recordings (`Fire0*`, `Horn0*`, `Ofire0_4`) are excluded from all analyses and listed in `recording_manifest.json`.
 - Earlier notebooks 03 and 04 are superseded by 07 and 08, which analyze the complete 120-trial dataset.
-
-## License
-
-MIT — see LICENSE.

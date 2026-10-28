@@ -7,9 +7,9 @@ Implements the three equations from Section III-C of the paper:
   (2)  tau_hat  = argmax R12(tau)
   (3)  theta    = arcsin( tau_hat · c / d )
 
-The key practical contribution is direct-path isolation: skipping the
-first 50 ms after sound onset and using a 1.5 s sustained window reduces
-frontal MAE from 56.3 degrees to 5.5 degrees in both real-room and studio conditions.
+The key practical step is direct-path isolation: skipping the first
+50 ms after sound onset and using a 1.5 s sustained window is essential
+for frontal accuracy (frontal MAE 6.8 degrees in the accompanying evaluation).
 """
 
 import math
